@@ -1,0 +1,982 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sardar Palace Sukheke</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#080808;
+    color:white;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    background:rgba(0,0,0,.95);
+    border-bottom:1px solid #b8942e;
+
+    padding:15px 6%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-box{
+    width:45px;
+    height:45px;
+    border:2px solid #d4af37;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d4af37;
+    font-weight:bold;
+}
+
+.logo h2{
+    color:#d4af37;
+    font-family:Georgia,serif;
+}
+
+.logo small{
+    color:#aaa;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+.menu{
+    display:none;
+    color:#d4af37;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:120px 20px 60px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero p:first-child{
+    color:#d4af37;
+    letter-spacing:5px;
+    font-size:13px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:90px;
+    margin:15px 0;
+}
+
+.hero h1 span{
+    color:#d4af37;
+}
+
+.hero h3{
+    font-family:Georgia,serif;
+    font-size:35px;
+    color:#ddd;
+}
+
+.hero-text{
+    color:#ccc;
+    margin:20px auto;
+    max-width:600px;
+}
+
+.buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 28px;
+    border:1px solid #d4af37;
+    font-weight:bold;
+}
+
+.btn.gold{
+    background:#d4af37;
+    color:#000;
+}
+
+.btn:hover{
+    background:#d4af37;
+    color:#000;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 7%;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.heading small{
+    color:#d4af37;
+    letter-spacing:4px;
+}
+
+.heading h2{
+    font-family:Georgia,serif;
+    font-size:50px;
+    margin:10px 0;
+}
+
+.line{
+    width:70px;
+    height:2px;
+    background:#d4af37;
+    margin:auto;
+}
+
+/* ABOUT */
+
+.about{
+    background:#111;
+}
+
+.about-grid{
+    max-width:1150px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-photo{
+    height:500px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.3)),
+    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=80");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.about-text h3{
+    color:#d4af37;
+    font-family:Georgia,serif;
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#aaa;
+    margin-bottom:18px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:30px;
+}
+
+.feature{
+    border-left:2px solid #d4af37;
+    padding-left:15px;
+}
+
+.feature h4{
+    color:#d4af37;
+}
+
+.feature p{
+    font-size:13px;
+}
+
+/* SERVICES */
+
+.services{
+    background:#080808;
+}
+
+.cards{
+    max-width:1150px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #332b18;
+    padding:35px 20px;
+    text-align:center;
+}
+
+.card:hover{
+    border-color:#d4af37;
+    transform:translateY(-5px);
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#d4af37;
+    font-family:Georgia,serif;
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#999;
+    font-size:13px;
+}
+
+/* GALLERY */
+
+.gallery{
+    background:#111;
+}
+
+.gallery-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.gallery-box{
+    height:260px;
+    background:#222;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#777;
+    border:1px solid #292313;
+}
+
+.gallery-box:hover{
+    border-color:#d4af37;
+}
+
+/* MENU */
+
+.menu-section{
+    background:#080808;
+}
+
+.menu-grid{
+    max-width:1000px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.menu-card{
+    padding:30px;
+    background:#111;
+    border-left:2px solid #d4af37;
+}
+
+.menu-card span{
+    color:#d4af37;
+}
+
+.menu-card h3{
+    font-family:Georgia,serif;
+    font-size:28px;
+    margin:8px 0;
+}
+
+.menu-card p{
+    color:#999;
+}
+
+/* BOOKING */
+
+.booking{
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.booking h2{
+    font-family:Georgia,serif;
+    font-size:55px;
+    max-width:800px;
+    margin:15px auto;
+}
+
+.booking p{
+    color:#ccc;
+    margin-bottom:25px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#111;
+}
+
+.contact-grid{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.contact-card{
+    text-align:center;
+    background:#080808;
+    border:1px solid #332b18;
+    padding:35px 20px;
+}
+
+.contact-card h3{
+    color:#d4af37;
+    font-family:Georgia,serif;
+    font-size:28px;
+    margin:10px 0;
+}
+
+.contact-card a{
+    display:block;
+    margin:7px;
+}
+
+.contact-card a:hover{
+    color:#d4af37;
+}
+
+.whatsapp{
+    display:inline-block!important;
+    background:#d4af37;
+    color:#000!important;
+    padding:12px 20px;
+    margin-top:15px!important;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    background:#050505;
+    text-align:center;
+    padding:50px 7% 25px;
+    border-top:1px solid #332b18;
+}
+
+footer h2{
+    color:#d4af37;
+    font-family:Georgia,serif;
+    margin:10px;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.footer-links a{
+    color:#aaa;
+}
+
+.footer-links a:hover{
+    color:#d4af37;
+}
+
+.copyright{
+    border-top:1px solid #222;
+    padding-top:20px;
+    color:#666;
+    font-size:12px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        background:#080808;
+        flex-direction:column;
+        padding:20px 7%;
+    }
+
+    nav.show{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:65px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:70px 5%;
+    }
+
+    .logo h2{
+        font-size:20px;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .hero h3{
+        font-size:27px;
+    }
+
+    .heading h2{
+        font-size:40px;
+    }
+
+    .about-photo{
+        height:350px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-box{
+        height:180px;
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .booking h2{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<div class="logo-box">SP</div>
+
+<div>
+<h2>Sardar Palace</h2>
+<small>Sukheke Mandi</small>
+</div>
+</div>
+
+<nav id="nav">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#menu">Menu</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<p>WELCOME TO</p>
+
+<h1>Sardar <span>Palace</span></h1>
+
+<h3>Sukheke Mandi</h3>
+
+<div class="hero-text">
+Where beautiful celebrations become unforgettable memories.
+</div>
+
+<div class="buttons">
+
+<a class="btn gold" href="#contact">
+Book Your Event
+</a>
+
+<a class="btn" href="#gallery">
+View Gallery
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="heading">
+
+<small>ABOUT US</small>
+
+<h2>Celebrate Your Special Moments</h2>
+
+<div class="line"></div>
+
+</div>
+
+<div class="about-grid">
+
+<div class="about-photo"></div>
+
+<div class="about-text">
+
+<h3>A Beautiful Place For Beautiful Memories</h3>
+
+<p>
+Sardar Palace Sukheke is a beautiful and modern wedding and event
+hall designed for your most special celebrations.
+</p>
+
+<p>
+We provide an elegant environment, beautiful decoration, spacious
+parking and delicious catering for weddings and family events.
+</p>
+
+<div class="features">
+
+<div class="feature">
+<h4>✦ Elegant Hall</h4>
+<p>Beautiful and comfortable environment.</p>
+</div>
+
+<div class="feature">
+<h4>✦ Spacious Parking</h4>
+<p>Convenient parking for guests.</p>
+</div>
+
+<div class="feature">
+<h4>✦ Catering</h4>
+<p>Delicious food for your event.</p>
+</div>
+
+<div class="feature">
+<h4>✦ Decoration</h4>
+<p>Beautiful arrangements for celebrations.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="heading">
+
+<small>WHAT WE OFFER</small>
+
+<h2>Our Services</h2>
+
+<div class="line"></div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">♛</div>
+<h3>Wedding Events</h3>
+<p>Make your wedding celebration beautiful and memorable.</p>
+</div>
+
+<div class="card">
+<div class="icon">✦</div>
+<h3>Decoration</h3>
+<p>Elegant decoration arrangements for your special occasion.</p>
+</div>
+
+<div class="card">
+<div class="icon">🍽️</div>
+<h3>Catering</h3>
+<p>Delicious food and professional catering arrangements.</p>
+</div>
+
+<div class="card">
+<div class="icon">🚗</div>
+<h3>Parking</h3>
+<p>Spacious parking area for your guests.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+<div class="heading">
+
+<small>OUR GALLERY</small>
+
+<h2>Sardar Palace Gallery</h2>
+
+<div class="line"></div>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-box">Your Photo 1</div>
+<div class="gallery-box">Your Photo 2</div>
+<div class="gallery-box">Your Photo 3</div>
+<div class="gallery-box">Your Photo 4</div>
+<div class="gallery-box">Your Photo 5</div>
+<div class="gallery-box">Your Photo 6</div>
+<div class="gallery-box">Your Photo 7</div>
+<div class="gallery-box">Your Photo 8</div>
+
+</div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="menu-section" id="menu">
+
+<div class="heading">
+
+<small>OUR CATERING</small>
+
+<h2>Wedding Menu</h2>
+
+<div class="line"></div>
+
+</div>
+
+<div class="menu-grid">
+
+<div class="menu-card">
+<span>01</span>
+<h3>Mutton</h3>
+<p>Special mutton dishes for your guests.</p>
+</div>
+
+<div class="menu-card">
+<span>02</span>
+<h3>Chicken</h3>
+<p>Delicious chicken dishes for your event.</p>
+</div>
+
+<div class="menu-card">
+<span>03</span>
+<h3>Beef</h3>
+<p>Traditional and delicious beef dishes.</p>
+</div>
+
+<div class="menu-card">
+<span>04</span>
+<h3>Sweets</h3>
+<p>Sweet dishes to complete your celebration.</p>
+</div>
+
+<div class="menu-card">
+<span>05</span>
+<h3>Fresh Water</h3>
+<p>Fresh drinking water for your guests.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOOKING -->
+
+<section class="booking">
+
+<p>MAKE YOUR EVENT SPECIAL</p>
+
+<h2>Book Sardar Palace For Your Next Celebration</h2>
+
+<p>
+Contact us today for booking and event details.
+</p>
+
+<a href="#contact" class="btn gold">
+Contact Us
+</a>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="heading">
+
+<small>GET IN TOUCH</small>
+
+<h2>Contact Sardar Palace</h2>
+
+<div class="line"></div>
+
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<div class="icon">📞</div>
+
+<h3>Call Us</h3>
+
+<a href="tel:03006145243">0300 6145243</a>
+
+<a href="tel:03008680281">0300 8680281</a>
+
+<a href="tel:03283699000">0328 3699000</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="icon">💬</div>
+
+<h3>WhatsApp Booking</h3>
+
+<p>Contact us for booking information.</p>
+
+<a
+class="whatsapp"
+href="https://wa.me/923006145243"
+target="_blank">
+WhatsApp Us
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="icon">📍</div>
+
+<h3>Location</h3>
+
+<p>
+Sukheke Mandi, District Hafizabad,
+Punjab, Pakistan
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="logo-box" style="margin:auto;">
+SP
+</div>
+
+<h2>Sardar Palace</h2>
+
+<p>Sukheke Mandi</p>
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#menu">Menu</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<p>0300 6145243</p>
+<p>0300 8680281</p>
+<p>0328 3699000</p>
+
+<div class="copyright">
+© 2026 Sardar Palace Sukheke. All Rights Reserved.
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+document.getElementById("nav").classList.toggle("show");
+
+}
+
+document.querySelectorAll("nav a").forEach(function(link){
+
+link.addEventListener("click",function(){
+
+document.getElementById("nav").classList.remove("show");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
